@@ -1,0 +1,9 @@
+package com.skillstorm.week1.day4;
+
+public class Vehicle {
+
+	private String make;
+	private String model;
+	private int year;
+	private String color;
+}

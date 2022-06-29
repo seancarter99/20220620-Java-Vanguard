@@ -1,0 +1,6 @@
+package com.skillstorm.week1.day4;
+
+public class Singleton {
+
+	// Having some control over a global entity
+}

@@ -1,0 +1,50 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.skillstorm</groupId>
+	<artifactId>mavenpractice</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Maven Practice (Optional Field)</name>
+	<description>This is an optional description of your project</description>
+
+	<!-- 
+		Maven Build Lifecycle
+		
+		Phases of the build
+		1. Validate (Validates the Maven project)
+		2. Compile (Compiles our Java source code)
+		3. Test (Runs Unit tests)
+		4. Package (Packages/bundles code into specified format (JAR/WAR/POM))
+		5. Verify (Runs integration tests)
+		6. Install (Takes the package and installs it so that other projects can use it)
+		7. Deploy (Takes that package and deploys to some repository MvnRepository/Arifactory/Nexus)
+	 
+	 	Maven Goals
+	 	Maven allows multiple goals to be run
+	 	- clean Allows us to remove what is in the target folder
+	 	
+	 -->
+
+	<!-- Changes Java Version -->
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+
+	<!-- Add dependencies to my project. Maven will auto install them -->
+	<dependencies>
+	
+		<!-- Install JUnit 4.13.2 to the project -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.13.2</version>
+			
+			<!-- Scope allows us to defer the installation of the dependency until a given phase -->
+			<scope>test</scope>
+		</dependency>
+		
+		
+	</dependencies>
+</project>

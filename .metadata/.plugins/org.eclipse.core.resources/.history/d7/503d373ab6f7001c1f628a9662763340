@@ -1,0 +1,5 @@
+package com.skillstorm.daos;
+
+public class MySQLArtistDAOImpl implements ArtistDAO {
+
+}

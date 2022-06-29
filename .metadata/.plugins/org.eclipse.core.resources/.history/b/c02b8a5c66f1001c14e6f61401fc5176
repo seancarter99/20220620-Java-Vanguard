@@ -1,0 +1,46 @@
+package com.skillstorm.week1.day2;
+
+// Public class name must match the file
+// Only one public class per file
+public class Rectangle {
+	private double length;
+	private double width;
+	
+	public Rectangle() {
+		super();
+	}
+	
+	public Rectangle (double length) { // Act as a Square constructor
+		this(length, length); // reuse the logic from the other constructor
+	}
+	
+	public Rectangle(double length, double width) {
+		setLength(length); // reuse the setter logic
+		setWidth(width); // reuse the setter logic
+	}
+
+	public double getLength() {
+		return length;
+	}
+
+	public void setLength(double length) {
+		this.length = length;
+	}
+
+	public double getWidth() {
+		return width;
+	}
+
+	public void setWidth(double width) {
+		this.width = width;
+	}
+	
+	public double calcArea() {
+		return length * width;
+	}
+	
+	public double calcPerimeter() {
+		return (2 * length) + (2 * perimeter);
+	}
+	
+}

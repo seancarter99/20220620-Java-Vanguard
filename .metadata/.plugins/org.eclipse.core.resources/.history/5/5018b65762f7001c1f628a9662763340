@@ -1,0 +1,15 @@
+package com.skillstorm.daos;
+
+import java.util.List;
+
+import com.skillstorm.models.Artist;
+
+public interface ArtistDAO {
+	
+	public Artist findById(int id);
+	public List<Artist> findAll();
+	public Artist save(Artist artist);
+	public void findOneAndUpdate(int id, Artist artist);
+	public void deleteOne(int id);
+	public void deleteMany(int[] ids);
+}

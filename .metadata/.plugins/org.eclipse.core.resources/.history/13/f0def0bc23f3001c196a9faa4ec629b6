@@ -1,0 +1,53 @@
+package com.skillstorm.week1.day4;
+
+public class VehicleBuilder {
+	private String make;
+	private String model;
+	private int year;
+	private String color;
+	public String getMake() {
+		return make;
+	}
+	public String getModel() {
+		return model;
+	}
+	public int getYear() {
+		return year;
+	}
+	public String getColor() {
+		return color;
+	}
+	
+	public VehicleBuilder make(String make) {
+		this.make = make; // Add make to this
+		return this; // Return this
+		
+		// Returning this allows us to chain
+	}
+	
+	public VehicleBuilder model(String model) {
+		this.model = model;
+		return this;
+	}
+	
+	public VehicleBuilder year(int year) {
+		this.year = year;
+		return this;
+	}
+	
+	public VehicleBuilder color(String color) {
+		this.color = color;
+		return this;
+	}
+	
+	public Vehicle build() {
+		if (isValid()) {
+			return new Vehicle(this);
+		}
+		throw new IllegalArgumentException("Invalid Vehicle");
+	}
+	
+	private boolean isValid() {
+		
+	}
+}

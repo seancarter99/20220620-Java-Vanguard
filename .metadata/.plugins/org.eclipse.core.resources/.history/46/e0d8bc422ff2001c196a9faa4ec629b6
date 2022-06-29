@@ -1,0 +1,6 @@
+package com.skillstorm.week1.day3;
+
+// Anything that implements Driveable will have the ability to be "driven" 
+public interface Driveable {
+	
+}

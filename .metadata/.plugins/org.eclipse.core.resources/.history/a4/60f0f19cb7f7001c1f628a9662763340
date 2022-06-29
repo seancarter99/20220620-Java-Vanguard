@@ -1,0 +1,27 @@
+package com.skillstorm.conf;
+
+public class ChinookDbCreds {
+
+	// Static intializer
+//	static {
+//		
+//	}
+	
+	private static ChinookDbCreds instance;
+	
+	private ChinookDbCreds() {
+		try {
+			// Load it into memory immediately so that I have it
+			Class.forName("com.mysql.cj.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static ChinookDbCreds getInstance() {
+		if (instance == null) {
+			instance = new ChinookDbCreds();
+		}
+		return instance;
+	}
+}

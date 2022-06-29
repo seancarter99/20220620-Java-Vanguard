@@ -1,0 +1,18 @@
+package com.skillstorm.week1.day4;
+
+public class TryCatchFinally {
+
+	public static void main(String[] args) {
+		// try/catch blocks are used to handle exceptions
+		// You can also add finally blocks to the end and these will always run
+		try {
+			int x = 5 / 1;
+			System.out.println(x);
+		} catch (Exception e) {
+			System.out.println("An error occured");
+		} finally {
+			System.out.println("I always run");
+		}
+	}
+
+}

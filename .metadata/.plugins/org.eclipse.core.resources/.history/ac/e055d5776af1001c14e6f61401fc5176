@@ -1,0 +1,8 @@
+package com.skillstorm.week1.day2;
+
+
+// Interfaces are similar to abstract classes, but they can't have ANY concrete methods (only abstract)
+
+public interface Polygon {
+
+}

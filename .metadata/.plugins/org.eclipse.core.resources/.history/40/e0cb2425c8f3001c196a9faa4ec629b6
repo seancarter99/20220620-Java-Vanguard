@@ -1,0 +1,58 @@
+package com.skillstorm.week1.day5;
+
+public class ThreadCounting {
+
+	private volatile static int count = 0;
+	
+	// This locks the entire object
+	// I can't call any other static synchronized methods on the ThreadCounting class
+	// till this is done
+	public static synchronized void increment() {
+		// This looks like one step
+		// It's actually 3
+		// 1. Read the value
+		// 2. Increment the value
+		// 3. Write the value to memory
+		count++; // This needs to be atomic
+	}
+	
+	public static void main(String[] args) throws InterruptedException {
+		MyThread t1 = new MyThread(100000);
+		MyThread t2 = new MyThread(100000);
+		
+		// 2000 should be the total count by the end
+		
+		t1.start();
+		t2.start();
+		
+		// This isn't synchronized, it might not be the most up to date count
+		System.out.println("Current count is " + count);
+		
+		try {
+			t1.join();
+			t2.join();
+		} catch (InterruptedException e) {
+			
+		}
+		System.out.println("The total count by the end is: " + count);
+		
+	}
+
+}
+
+class MyThread extends Thread {
+	
+	private int loopAmount;
+	
+	public MyThread(int loopAmount) {
+		this.loopAmount = loopAmount;
+	}
+	
+	// This will be called when executing the thread
+	@Override
+	public void run() {
+		for (int i = 0; i < loopAmount; i++ ) {
+			ThreadCounting.increment();
+		}
+	}
+}

@@ -1,0 +1,9 @@
+package com.skillstorm.week1.day2;
+
+public class Triangle extends Shape {
+
+	
+	public double calcArea() {
+		return 0.0;
+	}
+}

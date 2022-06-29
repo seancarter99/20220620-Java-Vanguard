@@ -1,0 +1,38 @@
+package com.skillstorm.conf;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
+public class ChinookDbConnection {
+
+	static {
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private static ChinookDbConnection connection = new ChinookDbConnection();
+
+	private String url;
+	private String username;
+	private String password;
+	
+	private ChinookDbConnection() {
+		try (InputStream input = ChinookDbConnection.class.getClassLoader()
+				.getResourceAsStream("application.properties")) {
+			Properties props = new Properties();
+			props.load(input);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static ChinookDbConnection getInstance() {
+		return connection;
+	}
+	
+	
+}

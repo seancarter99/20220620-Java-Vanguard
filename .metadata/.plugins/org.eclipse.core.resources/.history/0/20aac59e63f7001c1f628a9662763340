@@ -1,0 +1,15 @@
+package com.skillstorm;
+
+import com.skillstorm.daos.ArtistDAOImpl;
+import com.skillstorm.models.Artist;
+
+public class Driver {
+
+	public static void main(String[] args) {
+		ArtistDAOImpl dao = new ArtistDAOImpl();
+		
+		Artist artist = dao.findById("1 OR '' = ''; --");
+		System.out.println(artist);
+	}
+
+}

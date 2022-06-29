@@ -1,0 +1,7 @@
+package com.skillstorm.week1.day4;
+
+public class Singleton {
+
+	// Having some control over a global entity
+	// When I want ONLY one copy of something to exist, I should look to use Singleton
+}

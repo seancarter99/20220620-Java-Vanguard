@@ -1,0 +1,16 @@
+package com.skillstorm.week1.day5;
+
+/*
+ * Thread states
+ * 
+ * 1. NEW (Created, but not yet started new Thread())
+ * 2. RUNNABLE (Thread has started, but is eligible to be given control)
+ */
+public class ProducerConsumer {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

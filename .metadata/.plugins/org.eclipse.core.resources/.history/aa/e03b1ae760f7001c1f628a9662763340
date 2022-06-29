@@ -1,0 +1,14 @@
+package com.skillstorm.conf;
+
+public class ChinookDbConnection {
+
+	private static ChinookDbConnection connection;
+	
+	private ChinookDbConnection() {
+		
+	}
+	
+	public static ChinookDbConnection getInstance() {
+		return connection;
+	}
+}

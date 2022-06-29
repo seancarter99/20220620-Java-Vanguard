@@ -1,0 +1,31 @@
+package com.skillstorm.week1.day3;
+
+@FunctionalInterface
+public interface Action<T> {
+
+	void act(T item);
+	
+	public static void performSomeAction(Action<Integer> action, int num) {
+		action.act(num);
+	}
+	
+	public static void main(String[] args) {
+		
+		DoSomething<Integer> something = new DoSomething<>();
+		performSomeAction(something, 10);
+		performSomeAction((num) -> System.out.println(num * 2), 20);
+		
+		Action a = new Action() {
+			
+		};
+	}
+}
+
+class DoSomething<T> implements Action<T> {
+
+	@Override
+	public void act(T item) {
+		System.out.println(item);
+	}
+	
+}

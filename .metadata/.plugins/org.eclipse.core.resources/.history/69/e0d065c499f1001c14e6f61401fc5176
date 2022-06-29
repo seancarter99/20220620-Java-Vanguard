@@ -1,0 +1,34 @@
+package com.skillstorm.week1.day2;
+
+public class StackHeapPractice {
+
+	public static int addTwoNums(int x, int y) {
+		return x + y;
+	}
+	
+	public static void printNum(int num) {
+		System.out.println(num);
+	}
+	
+	public static void printNumSquared(int num) {
+		printNum(num * num);
+	}
+	
+	public static void changeArray(int[] nums) {
+		int[] newArray = {3, 2, 1};
+		nums = newArray;
+	}
+	
+	public static void main(String[] args) {
+//		int x = 2;
+//		int y = 3;
+//		int sum = addTwoNums(x, y);
+//		printNum(sum);
+//		printNumSquared(sum);
+		
+		int[] myNums = {1, 2, 3};
+		changeArray(myNums);
+		System.out.println(myNums[0]);
+	}
+
+}

@@ -1,0 +1,29 @@
+package com.skillstorm.week1.day4;
+
+public class SetPractice {
+
+	public static void main(String[] args) {
+		// Sets are a culmination of items that contain no duplicates
+		
+		// HashSet
+		
+		/*
+		 * Ordered Collection:
+		 * - Collections that have order (could be insertion order)
+		 * - Stack, Queue, List
+		 * 
+		 * Sorted Collection:
+		 * - Ordered collection, but the items are sorted upon entry
+		 * 
+		 * Unordered Collection:
+		 * - There's no order, elements are just added
+		 */
+		
+		
+		// Hashing
+		/*
+		 * 
+		 */
+	}
+
+}

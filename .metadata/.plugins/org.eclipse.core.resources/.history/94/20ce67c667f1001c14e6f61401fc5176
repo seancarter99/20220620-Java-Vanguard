@@ -1,0 +1,7 @@
+package com.skillstorm.week1.day2;
+
+// Adding the abstract keyword, makes the class abstract
+// An abstract class CANNOT be instantiated
+public abstract class Shape {
+
+}

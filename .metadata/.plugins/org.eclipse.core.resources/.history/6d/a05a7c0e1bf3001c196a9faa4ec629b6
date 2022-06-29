@@ -1,0 +1,7 @@
+package com.skillstorm.week1.day4;
+
+// Factory Design pattern is a way to manage the creation of objects
+// Instead of say new Whatever() everywhere in the codebase, you instead leverage the factory
+public class SuperheroFactory {
+
+}

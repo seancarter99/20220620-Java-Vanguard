@@ -1,0 +1,11 @@
+package com.skillstorm.week1.day3;
+
+public class ArrayListPractice {
+
+	public static void main(String[] args) {
+		int[] nums = {7, 1, 23, -23, 0};
+		nums[5] = 100;
+		
+	}
+
+}

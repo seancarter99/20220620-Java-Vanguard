@@ -1,0 +1,40 @@
+package com.skillstorm.week1.day4;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class FileIOPractice {
+
+	public static void writeToFile(String filePath, String message) {
+		// BufferedWriter
+		
+		// try-with-resources
+		BufferedWriter writer = null;
+		try {
+			writer = new BufferedWriter(new FileWriter(filePath));
+			writer.write(message);
+			
+			// Some logic
+			
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+		} finally { // This block "always" runs
+			try {
+				writer.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+		// IO
+		// IO stands Input/Output
+		
+		writeToFile("myFile.txt", "Hello World!");
+	}
+
+}

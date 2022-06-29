@@ -1,0 +1,15 @@
+package com.skillstorm.week1.day3;
+
+// Anything that implements Driveable will have the ability to be "driven" 
+public interface Driveable {
+	
+	public void drive();
+	
+	public void drive(int numMiles);
+	
+	
+	// You can have static methods in an interface so I can put main here if I want
+	public static void main(String[] args) {
+		
+	}
+}

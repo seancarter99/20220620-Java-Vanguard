@@ -1,0 +1,5 @@
+package com.skillstorm.conf;
+
+public class ChinookDbCreds {
+
+}

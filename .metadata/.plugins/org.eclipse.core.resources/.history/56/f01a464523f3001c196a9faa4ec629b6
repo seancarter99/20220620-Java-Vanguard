@@ -1,0 +1,27 @@
+package com.skillstorm.week1.day4;
+
+public class VehicleBuilder {
+	private String make;
+	private String model;
+	private int year;
+	private String color;
+	public String getMake() {
+		return make;
+	}
+	public String getModel() {
+		return model;
+	}
+	public int getYear() {
+		return year;
+	}
+	public String getColor() {
+		return color;
+	}
+	
+	public VehicleBuilder make(String make) {
+		this.make = make; // Add make to this
+		return this; // Return this
+		
+		// Returning this allows us to chain
+	}
+}

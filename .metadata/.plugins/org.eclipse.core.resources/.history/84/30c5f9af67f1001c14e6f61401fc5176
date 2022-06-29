@@ -1,0 +1,6 @@
+package com.skillstorm.week1.day2;
+
+// Adding the abstract keyword, makes the class abstract
+public abstract class Shape {
+
+}

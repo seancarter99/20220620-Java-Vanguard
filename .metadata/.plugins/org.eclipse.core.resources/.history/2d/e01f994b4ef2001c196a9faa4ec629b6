@@ -1,0 +1,28 @@
+package com.skillstorm.week1.day3;
+
+import java.util.ArrayList;
+
+public class ArrayListPractice {
+
+	public static void main(String[] args) {
+		int[] nums = {7, 1, 23, -23, 0};
+//		nums[5] = 100;
+		
+		/*
+		 * ArrayLists are a wrapper around arrays and they allow for easier resizing
+		 * 
+		 * Under the hood, they use generics to allow any non-primitive and they
+		 * possess a generic array T[] to store our data
+		 */
+		
+		int[] numsCopy = new int[10];
+		for (int i = 0; i < nums.length; i++) {
+			numsCopy[i] = nums[i];
+		}
+		nums = null;
+		System.gc();
+		
+		ArrayList<> listNums = new ArrayList<>();
+	}
+
+}

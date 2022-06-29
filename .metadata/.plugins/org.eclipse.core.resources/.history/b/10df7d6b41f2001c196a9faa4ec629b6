@@ -1,0 +1,15 @@
+package com.skillstorm.week1.day3;
+
+public class PrefixPostfix {
+
+	public static void main(String[] args) {
+		// Prefix looks like ++i
+		// Postfix looks like i++
+		
+		int a = 5;
+		int b = ++a; // Adds 1 to a, then assigns the value to b
+		int c = a++; // Assigns of value of a to c, then adds 1 to a
+		System.out.println(b);
+	}
+
+}

@@ -1,0 +1,15 @@
+package com.skillstorm.week1.day3;
+
+@FunctionalInterface
+public interface Action<T> {
+
+	void act(T item);
+	
+	public static void performSomeAction(Action<Integer> action, int num) {
+		action.act(num);
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+}

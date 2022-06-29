@@ -1,0 +1,18 @@
+package com.skillstorm.week1.day2;
+
+class Rectangle {
+	private double length;
+	private double width;
+	
+	public Rectangle() {
+		
+	}
+	
+	public Rectangle (double length) { // Act as a Square constructor
+		
+	}
+	
+	public Rectangle(double length, double width) {
+		
+	}
+}

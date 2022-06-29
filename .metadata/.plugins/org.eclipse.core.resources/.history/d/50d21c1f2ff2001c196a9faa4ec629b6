@@ -1,0 +1,6 @@
+package com.skillstorm.week1.day3;
+
+// Anything that implements Driveable 
+public interface Driveable {
+
+}

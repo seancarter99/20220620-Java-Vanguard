@@ -1,0 +1,83 @@
+package com.skillstorm.daos;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.LinkedList;
+import java.util.List;
+
+import com.skillstorm.conf.ChinookDbConnection;
+import com.skillstorm.models.Artist;
+
+public class ArtistDAOImpl implements ArtistDAO {
+
+	@Override
+	public Artist findById(String id) {
+		ChinookDbConnection db = ChinookDbConnection.getInstance();
+		try (Connection conn = DriverManager.getConnection(db.getUrl(), db.getUsername(), db.getPassword())) {
+			Statement stmt = conn.createStatement();
+			String sql = "SELECT * FROM artist WHERE name = " + id;
+			ResultSet rs = stmt.executeQuery(sql);
+			System.out.println(rs.getFetchSize());
+			rs.next();
+			return new Artist(rs.getInt("ArtistId"), rs.getString("Name"));
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public List<Artist> findAll() {
+		ChinookDbConnection db = ChinookDbConnection.getInstance();
+		try (Connection conn = DriverManager.getConnection(db.getUrl(), db.getUsername(), db.getPassword())) {
+			Statement stmt = conn.createStatement();
+			String sql = "SELECT * FROM artist";
+			ResultSet rs = stmt.executeQuery(sql);
+			LinkedList<Artist> artists = new LinkedList<>();
+			while (rs.next()) {
+				Artist artist = new Artist(rs.getInt("ArtistId"), rs.getString("Name"));
+				artists.add(artist);
+			}
+			return artists;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public Artist save(Artist artist) {
+		ChinookDbConnection db = ChinookDbConnection.getInstance();
+		try (Connection conn = DriverManager.getConnection(db.getUrl(), db.getUsername(), db.getPassword())) {
+			conn.setAutoCommit(false);
+			String sql = "INSERT INTO artist (artistid, name) VALUES (?, ?);";
+			PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public void findOneAndUpdate(int id, Artist artist) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteOne(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteMany(int[] ids) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

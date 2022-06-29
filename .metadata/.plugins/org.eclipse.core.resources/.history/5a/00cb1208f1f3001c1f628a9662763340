@@ -1,0 +1,12 @@
+package mavenpractice.com.skillstorm;
+
+public class Ballot {
+
+	private Candidate firstPick;
+	private Candidate secondPick;
+	private Candidate thirdPick;
+	
+	public Ballot(Candidate firstPick) {
+		this.firstPick = firstPick;
+	}
+}

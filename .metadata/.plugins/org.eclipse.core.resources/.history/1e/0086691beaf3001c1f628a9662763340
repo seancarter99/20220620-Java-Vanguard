@@ -1,0 +1,13 @@
+package mavenpractice.com.skillstorm;
+
+public class Election {
+
+	/*
+	 * Technical Requirements:
+	 * 
+	 * Edge Cases:
+	 * - If there's a tie, we have a list of winners (two presidents)
+	 * - What if two candidates have the same name? (Need equality comparisons)
+	 * - No ballots? (Throw an exception)
+	 */
+}

@@ -1,0 +1,63 @@
+package com.skillstorm.daos;
+
+import java.util.List;
+
+import com.skillstorm.models.Artist;
+
+public class MySQLArtistDAOImpl implements ArtistDAO {
+
+	/*
+	 * Steps for JDBC:
+	 * 1. Load the JDBC Driver into memory so that I know for sure I have it
+	 * 2. Establish a connection using said Driver object
+	 */
+	
+	@Override
+	public List<Artist> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Artist findById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Artist findByName(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Artist save(Artist artist) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void updateName(Artist artist) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(Artist artist) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteMany(int[] ids) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

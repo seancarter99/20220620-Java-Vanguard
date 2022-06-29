@@ -1,0 +1,38 @@
+package com.skillstorm.week1.day5;
+
+public class ThreadCounting {
+
+	private static int count = 0;
+	
+	public static void increment() {
+		count++;
+	}
+	
+	public static void main(String[] args) {
+		MyThread t1 = new MyThread(1000);
+		MyThread t2 = new MyThread(1000);
+		
+		// 2000 should be the total count by the end
+		
+		t1.start();
+		t2.start();
+	}
+
+}
+
+class MyThread extends Thread {
+	
+	private int loopAmount;
+	
+	public MyThread(int loopAmount) {
+		this.loopAmount = loopAmount;
+	}
+	
+	// This will be called when executing the thread
+	@Override
+	public void run() {
+		for (int i = 0; i < loopAmount; i++ ) {
+			ThreadCounting.increment();
+		}
+	}
+}
