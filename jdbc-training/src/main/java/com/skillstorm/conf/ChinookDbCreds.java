@@ -62,6 +62,7 @@ public class ChinookDbCreds {
 		return password;
 	}
 	
+	// Makes it simpler to retrieve a connection
 	public Connection getConnection() throws SQLException {
 		return DriverManager.getConnection(url, username, password);
 	}

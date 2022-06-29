@@ -1,0 +1,21 @@
+package com.skillstorm;
+
+import com.skillstorm.daos.ArtistDAO;
+import com.skillstorm.daos.MySQLArtistDAOImpl;
+
+public class Driver {
+	
+	// static initializer
+//	static {
+//		try {
+//			// Load it into memory immediately so that I have it
+//			Class.forName("com.mysql.cj.jdbc.Driver");
+//		} catch (ClassNotFoundException e) {
+//			e.printStackTrace();
+//		}
+//	}
+	
+	public static void main(String[] args) {
+		ArtistDAO dao = new MySQLArtistDAOImpl();
+	}
+}

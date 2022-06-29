@@ -11,11 +11,12 @@ public class Artist {
 	
 	// Use this one for auto increment ids
 	public Artist(String name) {
-		
+		this.name = name;
 	}
 	
 	public Artist(int id, String name) {
-		
+		this.id = id;
+		this.name = name;
 	}
 
 	public int getId() {
