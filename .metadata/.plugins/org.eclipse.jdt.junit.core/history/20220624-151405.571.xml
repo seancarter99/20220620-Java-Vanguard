@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="BallotTest" project="mavenpractice" tests="2" started="2" failures="0" errors="0" ignored="0">
-  <testsuite name="mavenpractice.BallotTest" time="0.0">
-    <testcase name="createBallotWithOnlyFirstPick" classname="mavenpractice.BallotTest" time="0.0"/>
-    <testcase name="createBallotWithNoFirstPick" classname="mavenpractice.BallotTest" time="0.0"/>
-  </testsuite>
-</testrun>

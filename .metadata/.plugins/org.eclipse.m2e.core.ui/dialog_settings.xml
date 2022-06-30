@@ -49,6 +49,9 @@
 			<item value="Maven Practice (Optional Field)"/>
 		</list>
 		<list key="artifactId">
+			<item value="jdbc-training"/>
+			<item value="jdbc-test"/>
+			<item value="maven"/>
 			<item value="mavenpractice"/>
 		</list>
 		<list key="projectNameTemplate">

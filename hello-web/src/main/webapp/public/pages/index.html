@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	<!-- This is a comment -->
+	<!--
+		These comments don't display on the page, but they are visible to the user. Don't say anything you wouldn't want your mom to see here
+	-->
+	<!-- CTL + / OR CMD + / -->
+	<head>
+		<!-- Head tags are good for meta data, they do not display to the user -->
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="Sean Carter" >
+		<meta name="keywords" content="HTML, SkillStorm, Sean, Java">
+		<meta name="description" content="A place to practice with HTML">
+		<title>Hello World!</title>
+		<style>
+			/* 
+				This is CSS code.
+				Because it's here, I can reuse across the entire page
+				This is better, but not the best
+			*/
+
+			/* This applies to ALL divs */
+			div {
+				color: green;
+				background-color: black;	
+			}
+		</style>
+		<!-- Link to a CSS page -->
+		<link rel="stylesheet" href="../styles/index.css" />
+
+		<!-- Great to link in JavaScript and CSS files -->
+	</head>
+	<body>
+		<!-- Everything in the body makes up the actual web page. What the user sees -->
+		<div>Hello World!</div>
+		<br /> <!-- Line break tag (newline). Don't use, instead favor CSS -->
+		<p class="big-text">My <b>Name</b>                                                               is Sean!</p>
+		<!-- This is bad, and only applies to one element -->
+		<div style="color: red; background-color: black;">I love HTML</div>
+		<p>A paragraph</p>
+		<div class="big-text" id="box">New div</div>
+		
+		<!--
+			Block Elements:
+			- Start on a new line (by default)
+			- Take up as much space as they're allowed to
+			- div (Generic block element. Carries no semantic meaning)
+			- p (Paragraph)
+
+			Inline Elements:
+			- Only take up as much space as they need
+			- span (Generic inline element. Carries no semantic meaning)
+			- b (bold)
+			- i (italics)
+			- u (underline)
+			- s (strikethrough)
+			- img (Images)
+			- input (Input)
+			- a (anchor tags AKA hyperlinks)
+
+			Semantic Tags:
+			- Semantic tags work the exact same as their non-semantic counter part. The only difference is the name
+			- nav (Navigation bar)
+			- header (The heading of a website)
+			- footer (The footer of a website)
+			- article
+			- section (section of the page)
+			- strong (bold)
+			- em (italics)
+		-->
+
+		<!-- By default, the target is to use the same tab -->
+		<!-- target=_self is the default -->
+		<!-- target=_blank opens a new tab -->
+		<a href="https://www.google.com" target="_self">Link to Google!</a>
+		<a href="anchor.html">Link to Anchor tag practice</a>
+		<div><a href="flexbox.html">Link to Flexbox Practice</a></div>
+		<div><a href="flexgrid.html">Link to Flexgrid Practice</a></div>
+	</body>
+</html>

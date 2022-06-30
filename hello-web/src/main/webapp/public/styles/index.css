@@ -1,0 +1,58 @@
+/* 
+    This is premier because I can use across MULTIPLE pages
+*/
+
+html {
+    background-color: aquamarine;
+}
+
+p {
+    color: blue;
+    background-color: lightgray;	
+}
+
+/* Class selector . */
+.big-text {
+    font-size: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Id selector # 
+    There should ONLY exist one unique id per page
+*/
+#box {
+    background-color: rgb(199, 190, 190);
+    /* This applies to ALL sides */
+    /* padding: 20px; */
+    /* 20 to top and bottom. 0 to left and right */
+    /* padding: 20px 0px; */
+    /* 20 to the top, 0 to left AND right, 10 to bottom */
+    /* padding: 20px 0px 10px; */
+    /* 10 to top, 20 right, 30 bottom, 40 left */
+    padding: 10px 20px 30px 40px;
+
+
+    border: 5px solid black;
+    border-radius: 10px;
+    margin: 50px;
+
+    /* Add transitions */
+    transition: 2s background-color;
+    transition: width 2s;
+}
+
+
+/* Pseudo Class */
+#box:hover {
+    background-color: cadetblue;
+    width: 50vw;
+}
+
+/*
+    Box Model
+
+    1. Content (The actual data of the element)
+    2. Border (Surrounds the content. Outer perimeter)
+    3. Padding (Adds space in between the content and border)
+    4. Margin (Adds space around the border and any other element that comes near)
+*/

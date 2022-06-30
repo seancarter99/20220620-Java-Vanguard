@@ -1,0 +1,41 @@
+.container {
+    display: grid;
+    /* 3 columns per row. 1st col is 60% of grid size, 2nd and 3rd are both 20% */
+    grid-template-columns: 60% 20% 20%;
+}
+
+.item {
+    font-size: 32px;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.purple {
+    background-color: purple;
+}
+
+.cyan {
+    background-color: cyan;
+}
+
+.pink {
+    background-color: pink;
+}
+
+.hulu-green {
+    background-color: #00ED82;
+}

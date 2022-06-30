@@ -1,0 +1,46 @@
+
+
+
+@media only screen and (max-width: 600px) {
+    body {
+      font-size: 50px;
+    }
+  }
+
+.container {
+    display: flex;
+    background-color: gray;
+    /* height: 50px; */
+    height: 500px;
+
+    /* Horizontally align */
+    justify-content: space-between;
+
+    /* Vertically align */
+    align-items: flex-end;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.item {
+    /* em = the font size * number + px
+        10em with 10px font size -> 100px
+        50em with 5px font size -> 250px
+    */
+    font-size: 0.5rem;
+    width: 10em;
+    height: 10em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

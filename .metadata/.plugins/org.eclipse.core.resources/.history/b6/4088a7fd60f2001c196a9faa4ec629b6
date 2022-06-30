@@ -1,7 +1,0 @@
-package com.skillstorm.week1.day3;
-
-@FunctionalInterface
-public interface Action {
-
-	void act();
-}

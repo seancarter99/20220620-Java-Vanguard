@@ -1,6 +1,0 @@
-package com.skillstorm.week1.day2;
-
-public class Square {
-	private double length;
-	private double width;
-}
