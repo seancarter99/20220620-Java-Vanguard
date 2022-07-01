@@ -86,24 +86,24 @@ public class ArtistServlet extends HttpServlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		int id = Integer.parseInt(req.getParameter("artist-id"));
-		String name = req.getParameter("artist-name");
-		System.out.println(id);
-		System.out.println(name);
+//		int id = Integer.parseInt(req.getParameter("artist-id"));
+//		String name = req.getParameter("artist-name");
+//		System.out.println(id);
+//		System.out.println(name);
+//		
 		
-		
-//		InputStream reqBody = req.getInputStream();
-//		Artist newArtist = mapper.readValue(reqBody, Artist.class);
-////		validatorService.validate(newArtist); // Could be a service
-//		newArtist = dao.save(newArtist); // IF the id changed
-//		if (newArtist != null) {
-//			resp.setContentType("application/json");
-//			resp.getWriter().print(mapper.writeValueAsString(newArtist));
-//			resp.setStatus(201); // The default is 200
-//		} else {
-//			resp.setStatus(400);
-//			resp.getWriter().print(mapper.writeValueAsString(new NotFound("Unable to create artist")));
-//		}
+		InputStream reqBody = req.getInputStream();
+		Artist newArtist = mapper.readValue(reqBody, Artist.class);
+//		validatorService.validate(newArtist); // Could be a service
+		newArtist = dao.save(newArtist); // IF the id changed
+		if (newArtist != null) {
+			resp.setContentType("application/json");
+			resp.getWriter().print(mapper.writeValueAsString(newArtist));
+			resp.setStatus(201); // The default is 200
+		} else {
+			resp.setStatus(400);
+			resp.getWriter().print(mapper.writeValueAsString(new NotFound("Unable to create artist")));
+		}
 	}
 
 }
