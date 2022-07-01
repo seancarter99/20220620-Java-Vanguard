@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Form</title>
+</head>
+<body>
+    <!-- A way for a user to submit a piece of data -->
+    <form action="/web-app/artists" method="POST">
+        <div>
+            Text:
+            <input type="text" />
+        </div>
+        <div>
+            Number:
+            <input type="number" />
+        </div>
+        <div>
+            Password:
+            <input type="password" />
+        </div>
+        <div>
+            Date:
+            <input type="date" />
+        </div>
+        <div>
+            Color:
+            <input type="color" />
+        </div>
+        <div>
+            Radio:
+            Male:
+            <input type="radio" name="gender" value="Male"/>
+            Female:
+            <input type="radio" name="gender" value="Female"/>
+        </div>
+        <div>
+            Checkbox:
+            Eggs
+            <input type="checkbox" name="groceries" value="Eggs"/>
+            Milk:
+            <input type="checkbox" name="groceries" value="Milks"/>
+            Bread:
+            <input type="checkbox" name="groceries" value="Bread" />
+        </div>
+        <div>
+            <select name="Country">
+                <option>USA</option>
+                <option>UK</option>
+                <option>Germany</option>
+                <option>China</option>
+            </select>
+        </div>
+    </form>
+
+    <br />
+    <form action="http://localhost:8080/hello-web/artists" method="GET">
+        <div>
+            <!-- Add a label to a form field. If you click the text of the label, it will target the form field -->
+            <label for="artist-id">Artist Id: </label>
+            <input id="artist-id" name="artist-id" />
+        </div>
+        <div>
+            <label for="artist-name">Artist Name: </label>
+            <input id="artist-name" name="artist-name" />
+        </div>
+        <button type="submit">Submit Form</button>
+    </form>
+</body>
+</html>
