@@ -1,4 +1,6 @@
-class Employee {
+import { Education } from "./Education";
+
+export class Employee {
     id :number;
     name :string;
     title :string;

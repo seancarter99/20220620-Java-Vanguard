@@ -1,1 +1,10 @@
-<p>employee-table works!</p>
+<table>
+    <tr><th>Name</th><th>Title</th><th>Salary</th><th>College</th><th>Major</th></tr>
+    <tr *ngFor="let temp of employees">
+        <td>{{temp.name}}</td>
+        <td>{{temp.title}}</td>
+        <td>{{temp.salary | currency: 'GBP'}}</td> <!-- pipes : date, currency, time, number-->
+        <td>{{temp.highest_degree.college}}</td>
+        <td>{{temp.highest_degree.major}}</td>
+    </tr>
+</table>

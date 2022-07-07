@@ -1,4 +1,4 @@
-class Education {
+export class Education {
     college :string;
     major :string;
     gpa :number;

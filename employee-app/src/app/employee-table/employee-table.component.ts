@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EmployeeApiService } from '../employee-api.service';
+import { Employee } from '../models/Employee';
 
 @Component({
   selector: 'app-employee-table',
@@ -7,14 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeeTableComponent implements OnInit {
 
-  employees :Array<any> = []
-  constructor() { 
+  employees :Array<Employee> = []
+  employeeApiService :EmployeeApiService; 
+
+  // Angular looks at this constructor and says "hey I have that.. let me get it for you"
+  constructor(employeeApiService :EmployeeApiService) { // majicks
     // only for property-setting
+    this.employeeApiService = employeeApiService;
   }
 
-  // init - called when the component is rendered
+  // init - called everytime the component is rendered
   ngOnInit(): void {
-    
+   // pub/sub - publisher/subscriber (component will subscribe to the Observable)
+   // when response data arrives, the component can receive the information
+   this.employeeApiService.findAll().subscribe(data => {
+          // callback to process the response
+      this.employees = data;
+   });
   }
-
 }
