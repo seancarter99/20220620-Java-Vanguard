@@ -1,6 +1,0 @@
-package mavenpractice.com.skillstorm;
-
-public class Candidate {
-
-	private String name;
-}

@@ -1,0 +1,36 @@
+<html>
+    <body>
+        <div id="parent" style="background-color: red;">
+            A
+            <br>
+            <div style="background-color: blue; color: white">
+                B
+                <br>
+                <div>C</div>
+            </div>
+
+        </div>
+    </body>
+    <script>
+        // dynamically generated content
+        var useCapture = false;
+        document.getElementsByTagName('div')[0].addEventListener('click', function(e){
+            // e - event object
+            console.log(this) 
+            //e.stopPropagation(); // stop the event from bubbling up
+        }, useCapture);
+
+        document.getElementsByTagName('div')[1].addEventListener('click', function(e){
+            // e - event object
+            console.log(this)
+            //e.stopPropagation(); // stop the event from bubbling up
+        }, useCapture);
+
+        document.getElementsByTagName('div')[2].addEventListener('click', function(e){
+            // e - event object
+            console.log(this)
+            //e.stopPropagation(); // stop the event from bubbling up
+        }, useCapture);
+        
+    </script>
+</html>

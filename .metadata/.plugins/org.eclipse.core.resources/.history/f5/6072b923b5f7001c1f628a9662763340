@@ -1,7 +1,0 @@
-package com.skillstorm.daos;
-
-// Queries specific to Artist
-public interface ArtistDAO {
-
-	// CRUD is Create, Read, Update, Delete
-}

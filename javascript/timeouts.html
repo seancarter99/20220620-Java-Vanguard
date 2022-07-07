@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </head>
+    <body></body>
+    <script>
+        // execute callback after the time elapsed
+        // timers - window
+        // 
+        setTimeout(() => { window.alert('Timeout elapsed!')}, 3000);
+        
+        // polling - callback executed indefinitely in time increment
+        setInterval( ()=>{
+            let url = 'https://my-json-server.typicode.com/skillstorm-walsh/employees-v1/employees/';
+            axios.get(url).then(resp => {
+                console.log(resp.data);
+            });
+        }, 5000 );
+    </script>
+</html>

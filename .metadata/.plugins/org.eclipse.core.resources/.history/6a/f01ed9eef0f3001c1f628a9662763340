@@ -1,8 +1,0 @@
-package mavenpractice.com.skillstorm;
-
-public class Ballot {
-
-	private Candidate firstPick;
-	private Candidate secondPick;
-	private Candidate thirdPick;
-}
