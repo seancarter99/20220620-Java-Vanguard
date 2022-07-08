@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeApiService } from '../employee-api.service';
 import { Employee } from '../models/Employee';
-import {Menu} from 'primeng/menu';
-import { MenuItem } from 'primeng/api';
+import { Button } from 'primeng/button';
 
 @Component({
   selector: 'app-employee-form',
@@ -15,23 +14,7 @@ export class EmployeeFormComponent implements OnInit {
   employeeFormData :Employee;
   service :EmployeeApiService;
   imageUrl :string = 'https://angular.io/assets/images/logos/angular/logo-nav@2x.png'
-  items :MenuItem[] = [
-    {
-      label: 'File',
-      items: [
-          {label: 'New', icon: 'pi pi-plus'},
-          {label: 'Open', icon: 'pi pi-download'}
-      ]
-  },
-  {
-      label: 'Edit',
-      items: [
-          {label: 'Undo', icon: 'pi pi-refresh'},
-          {label: 'Redo', icon: 'pi pi-repeat'}
-      ]
-  }
-  ]
-
+  
   constructor(service :EmployeeApiService) {  //Dependency injection (majick)
     // must initialize this object
     this.employeeFormData = new Employee()

@@ -4,15 +4,14 @@
     <label for="empId">ID</label>
     <!-- keypress I get an event that needs handling.. (event binding) -->
     <!-- interacting with component state - [attribute binding] -->
-    <input type="number" name="empId"  [(ngModel)]="employeeFormData.id"
+    <input pInputText  type="number" name="empId"  [(ngModel)]="employeeFormData.id"
     (focus)="onFocus($event)" (blur)="onBlur($event)"  />
 
     <label for="empName">Name</label>
-    <input type="text" name="empName" [(ngModel)]="employeeFormData.name" />
+    <input pInputText  type="text" name="empName" [(ngModel)]="employeeFormData.name" />
     
     <label for="empSalary">Salary</label>
-    <input type="number" name="empSalary" [(ngModel)]="employeeFormData.salary"/>
+    <input pInputText  type="number" name="empSalary" [(ngModel)]="employeeFormData.salary"/>
     
-    <input type="submit" value="Submit" />
-    <p-button label="Click" ></p-button>
+    <button pButton label="Submit"></button>
 </form>

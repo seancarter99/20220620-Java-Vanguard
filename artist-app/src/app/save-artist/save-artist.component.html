@@ -1,0 +1,6 @@
+<h2>Save Artist</h2>
+<form (submit)="submit(artist)">
+    <input type="number" name="artistId" [(ngModel)]="artist.id" />
+    <input type="text" name="artistName" [(ngModel)]="artist.name"/>
+    <input type="submit" />
+</form>

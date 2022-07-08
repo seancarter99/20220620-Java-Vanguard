@@ -1,0 +1,11 @@
+<h2>Find Artist</h2>
+<input type="number" name="searchId" [(ngModel)]="searchId" (change)="onChange()" />
+<!-- parent/ child   @Input/@Output -->
+<!-- separate child component that renders a single Artist object on a card-->
+<!-- pass the selected artist to the child component  -->
+
+<!-- artistCardComponent -->
+<section *ngIf="artist"> <!-- conditional rendering - if artist obj is truthy -->
+    <div>ID: {{artist.id}}</div>
+    <div>Name: {{artist.name}}</div>
+</section>
