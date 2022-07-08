@@ -8,9 +8,10 @@ import { environment } from 'src/environments/environment';
 })
 export class ArtistApiService {
 
+  // you store it here
   http :HttpClient;
 
-  constructor(http :HttpClient) { 
+  constructor(http :HttpClient) { // Angular makes it, passes it here
     this.http = http;
   }
 
