@@ -6,17 +6,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ExampleComponent } from './example/example.component';
 import { EmployeeTableComponent } from './employee-table/employee-table.component';
+import { EmployeeFormComponent } from './employee-form/employee-form.component';
+import { FormsModule } from '@angular/forms';
+import {ButtonModule} from 'primeng/button';
 
 @NgModule({
   declarations: [
     AppComponent,
     ExampleComponent,
-    EmployeeTableComponent
+    EmployeeTableComponent,
+    EmployeeFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

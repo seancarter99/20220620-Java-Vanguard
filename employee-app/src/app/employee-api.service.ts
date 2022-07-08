@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Employee } from './models/Employee';
 
 // Dependency Injection - tells Angular to create and store an instance of this object
@@ -11,7 +12,7 @@ import { Employee } from './models/Employee';
 export class EmployeeApiService {
 
   http :HttpClient;
-  baseUrl :string = 'https://my-json-server.typicode.com/skillstorm-walsh/employees-v1/employees/';
+  baseUrl :string = environment.apiUrl
 
   constructor(http :HttpClient) { // Angular calls this guy and gives the HttpClient object
     this.http = http;
@@ -19,6 +20,19 @@ export class EmployeeApiService {
 
   findAll() :Observable<any> {
     return this.http.get(this.baseUrl);
+  }
+  
+  // rxjs 
+  save(employee :Employee){                 // register an error handler
+    return this.http.post(this.baseUrl, employee).pipe(catchError(this.handleError));
+  }
+
+  private handleError(error :HttpErrorResponse){
+    // translate the HTTP error code into a Stacktrace
+    console.log(error);
+    return throwError(() => {
+      throw new Error(); // create a stacktrace
+    }); // return empty Observable
   }
 
 }

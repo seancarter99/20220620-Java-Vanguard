@@ -6,4 +6,14 @@
   -->
 <!--<p>{{ dan(10) }}</p>-->
 <!-- component selector -->
-<app-employee-table></app-employee-table>
+<!--<app-employee-form></app-employee-form> 
+<app-employee-table></app-employee-table> -->
+
+<nav>
+  <a [routerLink]="['/add-employee']">Add Employee</a> | 
+  <a [routerLink]="['/list-employees']">List Employees</a>
+</nav>
+<section>
+  <!-- render the selected component right here -->
+  <router-outlet></router-outlet>
+</section>

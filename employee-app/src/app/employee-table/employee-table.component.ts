@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { EmployeeApiService } from '../employee-api.service';
 import { Employee } from '../models/Employee';
 
@@ -7,7 +7,7 @@ import { Employee } from '../models/Employee';
   templateUrl: './employee-table.component.html',
   styleUrls: ['./employee-table.component.css']
 })
-export class EmployeeTableComponent implements OnInit {
+export class EmployeeTableComponent implements OnInit, OnDestroy {
 
   employees :Array<Employee> = []
   employeeApiService :EmployeeApiService; 
@@ -17,9 +17,13 @@ export class EmployeeTableComponent implements OnInit {
     // only for property-setting
     this.employeeApiService = employeeApiService;
   }
+  ngOnDestroy(): void {
+    console.log('ngOnDestroy')
+  }
 
   // init - called everytime the component is rendered
   ngOnInit(): void {
+    console.log('ngOnInit')
    // pub/sub - publisher/subscriber (component will subscribe to the Observable)
    // when response data arrives, the component can receive the information
    this.employeeApiService.findAll().subscribe(data => {
