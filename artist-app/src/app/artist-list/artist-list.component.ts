@@ -16,12 +16,16 @@ export class ArtistListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    setInterval(this.refreshData, 5000);
+    this.refreshData();
+    setInterval(() => {
+      this.refreshData(); 
+    }, 5000);
   }
 
   refreshData() :void {
     this.service.findAll().subscribe(data => {
       this.artists = data;
+      console.log('artist data refreshed')
     });
   }
 
