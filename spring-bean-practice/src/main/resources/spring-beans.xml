@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <!-- 
+    	name: The bean name
+    	class: The fully qualified class name to the object being created by Spring
+     -->
+    <bean name="weapon" class="com.skillstorm.beans.Sword"></bean>
+    <bean name="sword" class="com.skillstorm.beans.Sword"></bean>
+    <bean name="pistol" class="com.skillstorm.beans.Pistol"></bean>
+    
+    <bean name="cowboy" class="com.skillstorm.beans.Human">
+    	<!-- Add instructions for creating our bean -->
+    	<!--  <constructor-arg index="0" type="com.skillstorm.beans.Weapon" ref="weapon"></constructor-arg>
+    	 -->
+    	<property name="primaryWeapon" ref="pistol"></property>
+    </bean>
+    
+    <bean name="knight" class="com.skillstorm.beans.Human">
+    	<property name="primaryWeapon" ref="sword"></property>
+    </bean>
+
+</beans>

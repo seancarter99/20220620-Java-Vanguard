@@ -33,7 +33,7 @@ public class ArtistServlet extends HttpServlet {
 	public void init() throws ServletException {
 		// This allows us to write code that is run right as the servlet is created
 		// You can establish any connections
-		
+
 		System.out.println("ArtistServlet Created!");
 		super.init();
 	}
