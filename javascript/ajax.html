@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+
+    </body>
+    <script>
+        var url = 'https://my-json-server.typicode.com/skillstorm-walsh/employees-v1/employees/1'
+        // xhr - new XMLHttpRequest(), onreadystatechange, readyState, open, send
+        axios.get(url).then(function(resp){
+            console.log(resp.data)
+            document.getElementsByTagName('body')[0].innerText = 
+                resp.data.highest_degree.college
+        });
+
+        var postUrl = 'https://my-json-server.typicode.com/skillstorm-walsh/employees-v1/employees/'
+        var requestBody = 
+            {id: 4, name: 'Dan Pickles', title: 'Technical Architect', salary: 90000} 
+        
+            // Http   /  HttpClient - Angular
+            // React, jQuery, JS
+        axios.post(postUrl, requestBody).then(function(){
+            window.alert('Good job!');
+        });
+        // callback chaining (then - successful) try/catch/finally
+        // Promise - (async call) 'promises' to call your callback when it's done running
+    </script>
+</html>

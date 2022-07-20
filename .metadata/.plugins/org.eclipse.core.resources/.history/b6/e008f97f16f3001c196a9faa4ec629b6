@@ -1,9 +1,0 @@
-package com.skillstorm.week1.day4;
-
-public class TryCatchFinally {
-
-	public static void main(String[] args) {
-		// try/catch blocks are used to handle exceptions
-	}
-
-}

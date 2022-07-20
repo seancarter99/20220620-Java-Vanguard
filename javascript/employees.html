@@ -1,0 +1,30 @@
+<html>
+    <body>
+
+    </body>
+    <script>
+        // XMLHttpRequest 
+        var xhr = new XMLHttpRequest(); // ajax - send HTTP request to the server
+
+        xhr.onreadystatechange = function(){
+            // xhr will call this function EVERY TIME the readyState changes
+            // 0 - New
+            // 1 - Open / unsent
+            // 2 - sent / Headers parsed
+            // 3 - partial response
+            // 4 - Completed
+            if(xhr.readyState === 4 && xhr.status >= 200 && xhr.status <= 299){
+                // parse the HTTP response
+                // the HTTP response BODY (most probably JSON data)
+                var employee = JSON.parse(xhr.responseText);
+                // DOM manipulation
+                document.getElementsByTagName('body')[0].innerHTML = employee.highest_degree.major
+            }
+        }
+        // configure the request before sending
+        xhr.open('GET', 'https://my-json-server.typicode.com/skillstorm-walsh/employees-v1/employees/1')
+        xhr.send();
+        
+
+    </script>
+</html>

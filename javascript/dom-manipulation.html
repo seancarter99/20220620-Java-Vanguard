@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    
+        <script>
+            document.addEventListener('DOMContentLoaded', function(){
+                // write DOM content ` ECMAScript 6 (ES6)
+                var url= 'http://google.com';
+                // template literal - ES6
+                // add variable values very easily
+                document.getElementById('one').innerHTML = `
+                    <span>
+                        ${url}
+                    </span>
+                    `;
+                // write String text
+                
+                var house = new House(1200, 250000);
+                house.price = 500000;
+                console.log(house.price)
+                // JavaScript Object
+                // JavaScript Object Notation - string representation of an object
+                console.log(house);
+                var houseJSON = JSON.stringify(house)
+                console.log(houseJSON)
+                // ObjectMapper
+                var jsObj = JSON.parse(houseJSON);
+
+                // object literal syntax (ES6)
+                var jeep = {
+                    make: 'Jeep',
+                    model: 'Wrangler',
+                    price: 45000
+                };
+                var van = {
+                    make: 'Ford',
+                    model: 'Transit'
+                }
+                var tr = document.createElement('tr');// <tr>
+                var tdMake = document.createElement('td'); // td
+                tdMake.innerText = jeep.make
+                var tdModel = document.createElement('td'); // td
+                tdModel.innerText = jeep.model
+                tr.appendChild(tdMake);
+                tr.appendChild(tdModel);
+
+                var tableBody = 
+                    document.querySelector('#cars').getElementsByTagName('tbody')[0];
+                tableBody.appendChild(tr); // React. Angular, VueJS
+            });
+
+            // lexical environment
+            function House(sqft, price){
+                this.sqft = sqft;
+                this.price = price;
+            }
+
+        </script>
+    </head>
+    
+    <body class="container-fluid">
+        <div class="row">
+
+            <div id="one" class="col-lg-8 col-sm-12">
+                Div One
+            </div>
+            <div id="two" class="col-lg-6 col-sm-12">
+                Div Two
+            </div>
+
+        </div>
+
+        <div>
+            <!-- HTML5 - semantic tags article, nav, footer, section-->
+            <table class="table table-striped" id="cars">
+                <thead><tr><th>Make</th><th>Model</th></tr></thead>
+                <tbody>
+                    <!-- rows -->
+                </tbody>
+            </table>
+
+        </div>
+
+    </body>
+
+
+</html>

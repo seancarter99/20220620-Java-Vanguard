@@ -5,7 +5,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Scope;
 
+import com.skillstorm.beans.AlienWerewolf;
 import com.skillstorm.beans.Human;
+import com.skillstorm.beans.Nunchuck;
 import com.skillstorm.beans.Pistol;
 import com.skillstorm.beans.Robot;
 import com.skillstorm.beans.Sword;
@@ -49,6 +51,11 @@ public class SpringBeanConfiguration {
 	}
 	
 	@Bean
+	public Nunchuck nunchuck() {
+		return new Nunchuck();
+	}
+	
+	@Bean
 	@Primary
 	public Human cowboy() {
 		// 1. Create a Human object
@@ -67,5 +74,10 @@ public class SpringBeanConfiguration {
 	@Bean
 	public Robot robot() {
 		return new Robot();
+	}
+	
+	@Bean(initMethod = "init", destroyMethod = "delete")
+	public AlienWerewolf alienWerewolf() {
+		return new AlienWerewolf();
 	}
 }

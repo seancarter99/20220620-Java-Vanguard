@@ -1,0 +1,17 @@
+<img [src]="imageUrl" />
+<form (ngSubmit)="submit(employeeFormData)">
+    <!-- e.preventDefault();  take that React (take that Sean) -->
+    <label for="empId">ID</label>
+    <!-- keypress I get an event that needs handling.. (event binding) -->
+    <!-- interacting with component state - [attribute binding] -->
+    <input pInputText  type="number" name="empId"  [(ngModel)]="employeeFormData.id"
+    (focus)="onFocus($event)" (blur)="onBlur($event)"  />
+
+    <label for="empName">Name</label>
+    <input pInputText  type="text" name="empName" [(ngModel)]="employeeFormData.name" />
+    
+    <label for="empSalary">Salary</label>
+    <input pInputText  type="number" name="empSalary" [(ngModel)]="employeeFormData.salary"/>
+    
+    <button pButton label="Submit"></button>
+</form>

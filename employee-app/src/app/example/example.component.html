@@ -1,0 +1,15 @@
+<!-- data binding with expressions {{}}
+    interpolation
+-->
+<p>{{ value }}</p>
+<!-- event binding with directives (custom HTML attributes) -->
+<!-- attribute binding / property binding -->
+<button [disabled]="inactive" (click)="updateString('event binding')">Update</button>
+
+<table>
+    <tr><th>First</th><th>Last</th></tr>
+    <!-- directive - custom HTML attribute that "directs" Angular (in the template/view)-->
+    <!-- ngFor directive will repeat that HTML tag forEach element in an array -->
+    <!-- structural directive - *star changes the structure of the DOM (DOM manipulation) -->
+    <tr *ngFor="let temp of employees"><td>{{ temp.first }}</td><td>{{temp.last}}</td></tr>
+</table>

@@ -5,6 +5,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.skillstorm.beans.AlienWerewolf;
 import com.skillstorm.beans.Human;
 import com.skillstorm.beans.Pistol;
 import com.skillstorm.beans.Robot;
@@ -55,6 +56,7 @@ public class MainApplication {
 		
 		Human human = context.getBean(Human.class); // Give me a bean of type human
 		human.act();
+		
 		
 		
 		// Once the context is closed, we cannot access beans anymore

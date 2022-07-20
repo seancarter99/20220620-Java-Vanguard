@@ -1,0 +1,41 @@
+<html>
+    <body></body>
+    <script>
+        // ES6
+        let numbers = [10, 20, 30, 40, 50];
+        // for (Integer i : numbers) {  }
+        let anotherArray = []
+        numbers.forEach(temp => {
+            let val = temp * 1.0925
+            anotherArray.push(val)
+        });
+
+        // process each element and copy results into a new array
+        let updatedArray = numbers.map(temp => {
+           return temp * 1.0925;
+        });
+
+        // process all elements, and provide a single result
+        let sum = numbers.reduce((prev, current) => {
+            return prev + current
+        });
+        
+        // filter - create a new array containing elements that match the logic
+        let filteredArray = numbers.filter(temp => {
+            return temp > 30
+        });
+        //console.log(filteredArray)
+
+        // slice 
+        let slicedArray = numbers.slice(0, 3);
+        console.log(slicedArray)
+
+        // functional programming
+        let num=  numbers.map(temp => {
+            return temp * 10
+        }).filter(temp => {
+            return temp > 200
+        }); // whatever the last function returns 
+
+    </script>
+</html>

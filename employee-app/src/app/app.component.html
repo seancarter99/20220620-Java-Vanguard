@@ -1,0 +1,19 @@
+<!--<p>Hello Angular</p>-->
+
+<!-- expression: {{  variable  }}-->
+<!-- data binding - 
+  two-way data binding: changing a value on the view, changes the component value
+  -->
+<!--<p>{{ dan(10) }}</p>-->
+<!-- component selector -->
+<!--<app-employee-form></app-employee-form> 
+<app-employee-table></app-employee-table> -->
+
+<nav>
+  <a [routerLink]="['/add-employee']">Add Employee</a> | 
+  <a [routerLink]="['/list-employees']">List Employees</a>
+</nav>
+<section>
+  <!-- render the selected component right here -->
+  <router-outlet></router-outlet>
+</section>

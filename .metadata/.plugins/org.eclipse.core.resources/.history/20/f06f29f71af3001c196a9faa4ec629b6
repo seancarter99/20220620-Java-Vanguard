@@ -1,6 +1,0 @@
-package com.skillstorm.week1.day4;
-
-// Factory Design pattern is a way to manage the creation of objects
-public class SuperheroFactory {
-
-}
