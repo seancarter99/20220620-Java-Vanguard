@@ -1,18 +1,14 @@
 INDEX VERSION 1.131+C:\Users\Sean Carter\SkillStorm\Java Vanguard\.metadata\.plugins\org.eclipse.jdt.core
-2691137505.index
 2944408671.index
 2720670053.index
 1471945324.index
 2304466853.index
 2752066071.index
 844851424.index
-278205790.index
-2739219086.index
 776178153.index
 1865797976.index
 3925148963.index
 1551413812.index
-2247478999.index
 3762540823.index
-2149422400.index
-3355314930.index
+2114375322.index
+3026487629.index
