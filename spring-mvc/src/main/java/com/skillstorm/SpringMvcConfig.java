@@ -27,6 +27,7 @@ public class SpringMvcConfig implements WebApplicationInitializer, WebMvcConfigu
 		
 		// Minor, but moves everything in static to be accessed on the root level of the folder
 		registry.addResourceHandler("/static/**").addResourceLocations("/static/");
+//		registry.addResourceHandler("/public/**").addResourceLocations("/public/");
 	}
 	
 	@Bean

@@ -57,7 +57,7 @@ public class ShoppingAspect {
 	// Runs ONLY if the joinpoin threw an exception
 	@AfterThrowing(pointcut = "pointcut()", throwing = "e")
 	public void invalidMembership(Throwable e) {
-		// In JDBC, conn.rollabck()
+		// In JDBC, conn.rollback()
 		System.err.println(e.getMessage());
 	}
 	
