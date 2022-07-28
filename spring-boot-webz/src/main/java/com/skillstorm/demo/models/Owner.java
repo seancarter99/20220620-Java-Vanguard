@@ -12,8 +12,13 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 @Entity
 @Table(name = "owner")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Owner {
 	
 	@Id
@@ -32,6 +37,7 @@ public class Owner {
 	// One owner can have many pets
 	// owner because that is the Java field to use
 	@OneToMany(mappedBy = "owner")
+//	@JsonManagedReference // This does get serialized, but it's back half doesn't
 	private Set<Pet> pets;
 	
 	public Owner() {

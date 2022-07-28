@@ -14,6 +14,9 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
+
 @Entity
 @Table(name = "pet")
 public class Pet {
@@ -57,11 +60,13 @@ public class Pet {
 	@Column
 	private String name;
 	
-	@NotNull
+//	@NotNull // I may have ownerless pets
 	// This is a foreign key to the Owner table. As such, it is a join Column
 //	@ManyToOne(fetch = FetchType.LAZY) // Don't grab this data until calling getOwner()
 	@ManyToOne // defaults to eager
 	@JoinColumn(name = "owner_id")
+//	@JsonBackReference // This does not get serialized. It's accessed on the other end
+	@JsonIdentityReference(alwaysAsId = true)
 	private Owner owner;
 	
 	public Pet() {

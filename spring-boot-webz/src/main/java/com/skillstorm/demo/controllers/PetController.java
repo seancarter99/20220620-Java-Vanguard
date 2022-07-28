@@ -2,9 +2,13 @@ package com.skillstorm.demo.controllers;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.skillstorm.demo.models.Pet;
+import com.skillstorm.demo.services.PetService;
 
 /*
  * REST (Representational State Transfer)
@@ -72,40 +77,45 @@ import com.skillstorm.demo.models.Pet;
 @RequestMapping("/pets") // Adds /pets to all methods in this function
 public class PetController {
 	
+	@Autowired
+	private PetService service;
+	
 	// find all
 	@GetMapping
-	public List<Pet> findAll() {
+	public Set<Pet> findAllOwnerlessPets() {
 		// List will get transformed by Jackson into a JSON array
-		LinkedList<Pet> pets = new LinkedList<>();
-		pets.add(new Pet(1, "Turkey", "Dinner", "Mr. Gobble", null));
-		pets.add(new Pet(2, "Alien Donkey", "Martian", "Marty", null));
-		pets.add(new Pet(3, "Parrot", "African Gray", "Einstein", null));
-		return pets;
+//		LinkedList<Pet> pets = new LinkedList<>();
+//		pets.add(new Pet(1, "Turkey", "Dinner", "Mr. Gobble", null));
+//		pets.add(new Pet(2, "Alien Donkey", "Martian", "Marty", null));
+//		pets.add(new Pet(3, "Parrot", "African Gray", "Einstein", null));
+		return service.findAllOwnerlessPets();
 	}
 	
 	// find by id
 	// The {id} symbolizes that I can pull this out of the URL path
 	@GetMapping("/{id}")
 	public Pet findById(@PathVariable int id) {
-		return new Pet(id, "Dog", "Golden Doodle", "Jimmy", null);
+//		return new Pet(id, "Dog", "Golden Doodle", "Jimmy", null);
+		return service.findById(id);
 	}
 	
 	// create
 	@PostMapping
-	public Pet create(@Valid @RequestBody Pet pet) {
-		return pet;
+	public ResponseEntity<Pet> create(@Valid @RequestBody Pet pet) {
+		return new ResponseEntity<>(service.save(pet), HttpStatus.CREATED);
 	}
 	
 	// update
 	@PutMapping("/{id}")
 	public Pet update(@Valid @RequestBody Pet pet, @PathVariable int id) {
 		pet.setId(id);
-		return pet; // repository.save(pet);
+		return service.update(pet); // repository.save(pet);
 	}
 	
 	// delete by id
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable int id) {
 		// Deletes the pet from the database
+		service.deleteById(id);
 	}
 }
