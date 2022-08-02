@@ -4,8 +4,7 @@ import java.util.List;
 
 import javax.validation.Valid;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -40,7 +39,7 @@ public class OwnerController {
 	 * If I set the log level to info. Then only info-fatal logs are printed. Debug and trace do not happen
 	 */
 	
-	private static final Logger log = LoggerFactory.getLogger(OwnerController.class);
+	private static final Logger log = Logger.getLogger(OwnerController.class);
 	
 	@Autowired
 	private OwnerService service;
