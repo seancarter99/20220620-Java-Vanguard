@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: park-api # Eureka uses this to put a label on a service
+  datasource:
+    url: jdbc:mysql://localhost:3306/parks
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: none
