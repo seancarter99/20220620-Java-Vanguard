@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: rb-pub
+  rabbitmq:
+    host: localhost
+    port: 5672
+
+queues:
+  main: main-queue
+  
+server:
+  port: 9000

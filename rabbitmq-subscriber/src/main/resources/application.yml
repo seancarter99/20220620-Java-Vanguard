@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: rabbitmq-subscriber
+  rabbitmq:
+    host: localhost
+    port: 5672
+
+server:
+  port: 9001
+
+queues:
+  direct: planets
+  fanout: carFanout
+
+exchanges:
+  fanout: cars
